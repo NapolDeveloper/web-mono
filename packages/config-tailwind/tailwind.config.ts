@@ -4,6 +4,11 @@ import type { Config } from 'tailwindcss';
 const config: Omit<Config, 'content'> = {
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
       colors: {
         'suldak-gray-900': '#1e1e1e',
         'suldak-gray-700': '#646464',
@@ -20,6 +25,7 @@ const config: Omit<Config, 'content'> = {
         'suldak-mint-50': '#f6fdfe',
         'suldak-mint-100': '#CEF2F4',
         'suldak-mint-200': '#9CE5EA',
+        'suldak-mint-600': '#0698A2',
       },
       boxShadow: {
         'suldak-card': '2px 2px 20px -3px rgba(0, 0, 0, 0.13)',
@@ -53,10 +59,15 @@ const config: Omit<Config, 'content'> = {
       },
       fontFamily: {
         pretendard: ['Pretendard', 'sans-serif'],
-        WAGURI: ['WAGURI', 'sans-serif'],
+        GMarket: ['GMarket', 'sans-serif'],
+      },
+      screens: {
+        mobile: { max: '639px' },
+        tablet: { min: '640px', max: '1023px' },
+        pc: { min: '1024px' },
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
 };
 export default config;

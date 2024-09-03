@@ -1,35 +1,43 @@
-import Image from 'next/image';
-import Test from '../components/test';
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import CopySection from 'src/components/copy-section';
+import GroupSection from 'src/components/group-section';
+import Header from 'src/components/header';
+import NavigationBar from 'src/components/navigation-bar';
+import ReservationSection from 'src/components/reservation-section';
+import ReservationToaster from 'src/components/reservation-toaster';
+import ReviewSection from 'src/components/review-section';
+import ServiceSection from 'src/components/service-section';
 
-export default function Home() {
+
+function LandingPage() {
+  const [isMounted, setIsMounted] = useState(false);
+  const reservationRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const scrollToReservation = () => {
+    reservationRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  if (!isMounted) {
+    return null;
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 text-suldak-orange-500">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            By{' '}
-            <Image
-              alt="Vercel Logo"
-              className="dark:invert"
-              height={24}
-              priority
-              src="/vercel.svg"
-              width={100}
-            />
-          </a>
-        </div>
-      </div>
-
-      <Test />
-    </main>
+    <div className="w-full flex flex-col items-center justify-center">
+      <Header scrollToReservation={scrollToReservation} />
+      <CopySection />
+      <GroupSection />
+      <ServiceSection />
+      <ReviewSection />
+      <ReservationSection ref={reservationRef} />
+      <NavigationBar scrollToReservation={scrollToReservation} />
+      <ReservationToaster />
+    </div>
   );
 }
+
+export default LandingPage;
