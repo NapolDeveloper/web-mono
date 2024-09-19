@@ -1,7 +1,8 @@
 import Image, { StaticImageData } from 'next/image';
-import GroupMember from '../assets/images/image-group-member.png';
-import LocationIcon from '../assets/images/image-location.png';
-import HashTag from './hash-tag';
+import GroupMember from '@assets/images/image-group-member.png';
+import LocationIcon from '@assets/images/image-location.png';
+import HashTag from '@components/hash-tag';
+
 
 interface Tag {
   content: string;

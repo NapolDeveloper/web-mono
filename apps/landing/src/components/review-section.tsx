@@ -2,17 +2,17 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import TalkImg from '../assets/icons/ico-talk.svg';
-import ReviewImg1 from '../assets/images/image-review-1.png';
-import ReviewImg2 from '../assets/images/image-review-2.png';
-import ReviewImg3 from '../assets/images/image-review-3.png';
-import ReviewImg4 from '../assets/images/image-review-4.png';
-import ReviewImg5 from '../assets/images/image-review-5.png';
-import ReviewImg6 from '../assets/images/image-review-6.png';
-import ReviewImg7 from '../assets/images/image-review-7.png';
-import ReviewImg8 from '../assets/images/image-review-8.png';
-import ReviewImg9 from '../assets/images/image-review-9.png';
-import ReviewImg10 from '../assets/images/image-review-10.png';
+import TalkImg from '@assets/icons/ico-talk.svg';
+import ReviewImg1 from '@assets/images/image-review-1.png';
+import ReviewImg2 from '@assets/images/image-review-2.png';
+import ReviewImg3 from '@assets/images/image-review-3.png';
+import ReviewImg4 from '@assets/images/image-review-4.png';
+import ReviewImg5 from '@assets/images/image-review-5.png';
+import ReviewImg6 from '@assets/images/image-review-6.png';
+import ReviewImg7 from '@assets/images/image-review-7.png';
+import ReviewImg8 from '@assets/images/image-review-8.png';
+import ReviewImg9 from '@assets/images/image-review-9.png';
+import ReviewImg10 from '@assets/images/image-review-10.png';
 
 function ReviewSection() {
   const commonSettings = {
@@ -88,7 +88,7 @@ function ReviewSection() {
 
   return (
     <div className="h-[950px] w-full bg-gray-100 py-[120px] mobile:h-[516px] mobile:py-[60px] mobile:text-center tablet:text-center">
-      <div className="flex items-center mobile:flex-col mobile:justify-center tablet:justify-center pc:ml-[18%]">
+      <div className="flex w-full items-center mobile:flex-col mobile:justify-center tablet:justify-center pc:ml-[18%]">
         <TalkImg className="mr-4 mobile:mb-[8px]" />
         <h2 className="text-[32px] font-bold mobile:text-[22px]">
           당신이 궁금해하는 모든 것
@@ -135,3 +135,4 @@ function ReviewSection() {
 }
 
 export default ReviewSection;
+

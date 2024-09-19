@@ -1,7 +1,8 @@
 'use client';
 
-import SmallLogo from '../assets/images/image-logo-small.png';
-import HeadRight from '../assets/icons/ico-head-right.svg';
+import HeadRight from '@assets/icons/ico-head-right.svg';
+import SmallLogo from '@assets/icons/ico-small-logo.svg';
+import BigLogo from '@assets/icons/ico-big-logo.svg';
 import Image from 'next/image';
 
 interface NavigationProps {
@@ -11,11 +12,14 @@ interface NavigationProps {
 function NavigationBar({ scrollToReservation }: NavigationProps) {
   return (
     <div className="fixed bottom-0 z-40 flex w-full justify-center">
-      <div className="w-full max-w-[1200px] bg-white shadow-suldak-card mobile:rounded-t-[20px] pc:rounded-[12px] tablet:rounded-[12px]">
+      <div className="w-full pc:w-[62.5%] bg-white shadow-suldak-card mobile:rounded-t-[20px] pc:rounded-[12px] tablet:rounded-[12px]">
         <div className="flex items-center justify-between px-6 py-4 text-[20px]">
           <div className="flex items-center">
-            <div className="relative h-[48px] w-[90px] mobile:ml-[16px] mobile:h-[42px] mobile:w-[78px] pc:mr-[20px] tablet:mr-[20px]">
-              <Image src={SmallLogo} alt="logo" fill />
+            <div className="relative h-[48px] w-[90px] mobile:ml-[16px] mobile:h-[42px] mobile:w-[78px] pc:hidden tablet:hidden">
+              <SmallLogo />
+            </div>
+            <div className="relative h-[48px] w-[90px] mobile:hidden pc:mr-[20px] tablet:mr-[20px]">
+              <BigLogo />
             </div>
             <div className="mobile:hidden">즐거운 술 문화를 위한 플랫폼</div>
           </div>
@@ -41,3 +45,4 @@ function NavigationBar({ scrollToReservation }: NavigationProps) {
 }
 
 export default NavigationBar;
+

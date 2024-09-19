@@ -1,15 +1,16 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import ProfileImg1 from '../assets/images/image-profile-1.png';
-import ProfileImg2 from '../assets/images/image-profile-2.png';
-import ProfileImg3 from '../assets/images/image-profile-3.png';
-import ProfileImg4 from '../assets/images/image-profile-4.png';
-import ProfileImg5 from '../assets/images/image-profile-5.png';
-import ProfileImg6 from '../assets/images/image-profile-6.png';
-import ProfileImg7 from '../assets/images/image-profile-7.png';
-import ProfileImg8 from '../assets/images/image-profile-8.png';
-import CarouselCard from './carousel-card';
+import ProfileImg1 from '@assets/images/image-profile-1.png';
+import ProfileImg2 from '@assets/images/image-profile-2.png';
+import ProfileImg3 from '@assets/images/image-profile-3.png';
+import ProfileImg4 from '@assets/images/image-profile-4.png';
+import ProfileImg5 from '@assets/images/image-profile-5.png';
+import ProfileImg6 from '@assets/images/image-profile-6.png';
+import ProfileImg7 from '@assets/images/image-profile-7.png';
+import ProfileImg8 from '@assets/images/image-profile-8.png';
+import CarouselCard from '@components/carousel-card';
+
 
 function GroupCarousel() {
   const settings = {

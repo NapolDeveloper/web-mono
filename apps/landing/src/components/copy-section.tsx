@@ -1,6 +1,7 @@
-import Logo from '../assets/images/image-logo-big.png';
-import Line from '../assets/icons/ico-line.svg';
-import SmallLine from '../assets/icons/ico-line-small.svg';
+import SmallLogo from '@assets/icons/ico-copy-small.svg';
+import BigLogo from '@assets/icons/ico-copy-big.svg';
+import Line from '@assets/icons/ico-line.svg';
+import SmallLine from '@assets/icons/ico-line-small.svg';
 import Image from 'next/image';
 function CopySection() {
   return (
@@ -24,8 +25,11 @@ function CopySection() {
         서로의 공통분모에서 시작하는 <br className="pc:hidden tablet:hidden" />
         새로운 모임 플랫폼
       </div>
-      <div className="mobile:h-[74px] mobile:w-[136px] h-[102px] w-[190px]">
-        <Image src={Logo} alt="logo" quality={100} />
+      <div className="mobile:hidden">
+        <BigLogo />
+      </div>
+      <div className="pc:hidden tablet:hidden">
+        <SmallLogo />
       </div>
     </section>
   );

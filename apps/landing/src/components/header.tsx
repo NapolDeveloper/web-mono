@@ -1,8 +1,9 @@
 import Image from 'next/image';
-import HeadRight from '../assets/icons/ico-head-right.svg';
-import HeadImg from '../assets/images/image-head.png';
-import HeadSmallImg from '../assets/images/image-head-small.png';
-
+import Lottie from 'lottie-react';
+import HeadRight from '@assets/icons/ico-head-right.svg';
+import HeadImg from '@assets/images/image-head.png';
+import AnimationData from '@assets/images/animation-web-blog.json';
+import VectorImg from '@assets/images/img-vector.png';
 interface HeaderProps {
   scrollToReservation: () => void;
 }
@@ -10,12 +11,41 @@ interface HeaderProps {
 function Header({ scrollToReservation }: HeaderProps) {
   return (
     <>
-      <div className="relative tablet:hidden h-[900px] w-full  mobile:hidden">
-        <Image src={HeadImg} alt="Header Image" fill />
+      <div className="flex relative tablet:h-[800px] pc:h-[900px] mobile:h-[600px] w-full bg-suldak-mint-500">
+        <div className="flex w-full relative justify-center items-center bg-suldak-mint-500">
+          <div className="flex w-full tablet:hidden mobile:hidden justify-center items-center">
+            <div className="absolute bottom-0  justify-center items-center">
+              <Image
+                src={VectorImg}
+                width={1100}
+                height={444}
+                alt="bg-vector"
+                className="z-10"
+              />
+            </div>
+            <div className="absolute z-20 bottom-4  justify-center items-center">
+              <Lottie
+                animationData={AnimationData}
+                loop={true}
+                autoplay={true}
+                style={{ width: '1000px', height: '474px' }}
+              />
+            </div>
+          </div>
+          <div className="absolute justify-center items-center bottom-0 pc:hidden mobile:hidden">
+            <Image src={HeadImg} alt="Header Image" height={743} width={600} />
+          </div>
+          <div className="absolute justify-center items-center bottom-0 pc:hidden tablet:hidden">
+            <Image
+              src={HeadImg}
+              alt="Header Small Image"
+              height={288}
+              width={355}
+            />
+          </div>
+        </div>
       </div>
-      <div className="relative tablet:h-[700px ]  h-[600px] w-full pc:hidden">
-        <Image src={HeadSmallImg} alt="Header Small Image" fill />
-      </div>
+
       <section className="absolute left-1/2 top-[100px] -translate-x-1/2 transform text-center">
         <div className="mb-4 text-nowrap font-GMarket text-[42px] font-medium text-white mobile:text-[20px]">
           나와 우리, 그리고 한 잔의 술

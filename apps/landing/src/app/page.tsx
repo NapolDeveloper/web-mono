@@ -1,14 +1,13 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import CopySection from 'src/components/copy-section';
-import GroupSection from 'src/components/group-section';
-import Header from 'src/components/header';
-import NavigationBar from 'src/components/navigation-bar';
-import ReservationSection from 'src/components/reservation-section';
-import ReservationToaster from 'src/components/reservation-toaster';
-import ReviewSection from 'src/components/review-section';
-import ServiceSection from 'src/components/service-section';
-
+import ServiceSection from '@components/service-section';
+import CopySection from '@components/copy-section';
+import GroupSection from '@components/group-section';
+import Header from '@components/header';
+import NavigationBar from '@components/navigation-bar';
+import ReservationSection from '@components/reservation-section';
+import ReviewSection from '@components/review-section';
+import Footer from '@components/footer';
 
 function LandingPage() {
   const [isMounted, setIsMounted] = useState(false);
@@ -34,10 +33,11 @@ function LandingPage() {
       <ServiceSection />
       <ReviewSection />
       <ReservationSection ref={reservationRef} />
+      <Footer />
       <NavigationBar scrollToReservation={scrollToReservation} />
-      <ReservationToaster />
     </div>
   );
 }
 
 export default LandingPage;
+

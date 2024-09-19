@@ -1,5 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
-import axiosInstance from './axiosInstance';
+import { useState, useCallback } from 'react';
 
 const isValidEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -13,34 +12,48 @@ interface EnrollResponse {
   success: boolean;
 }
 
-const enrollReservation = async (email: string): Promise<EnrollResponse> => {
-  if (!email || !isValidEmail(email)) {
-    throw new Error('Invalid email address');
-  }
-
-  try {
-    const { data } = await axiosInstance.post<EnrollResponse>(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/reservation/user`,
-      {
-        userEmail: email,
-      },
-    );
-
-    return data;
-  } catch (error) {
-    console.error('Error enrolling reservation:', error);
-    throw error;
-  }
-};
-
 export const useEnrollReservation = () => {
-  return useMutation({
-    mutationFn: enrollReservation,
-    onSuccess: (data) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+
+  const mutate = useCallback(async (email: string): Promise<EnrollResponse> => {
+    if (!email || !isValidEmail(email)) {
+      throw new Error('Invalid email address');
+    }
+
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/reservation/user`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: process.env.NEXT_PUBLIC_TOKEN || '',
+          },
+          body: JSON.stringify({ userEmail: email }),
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data: EnrollResponse = await response.json();
       console.log('Reservation enrolled successfully:', data);
-    },
-    onError: (error) => {
-      console.error('Error enrolling reservation:', error);
-    },
-  });
+      return data;
+    } catch (err) {
+      console.error('Error enrolling reservation:', err);
+      setError(
+        err instanceof Error ? err : new Error('An unknown error occurred'),
+      );
+      throw err;
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  return { mutate, isLoading, error };
 };

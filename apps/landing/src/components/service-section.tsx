@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import TalkImg from '../assets/icons/ico-talk.svg';
-import CopyImg1 from '../assets/images/image-copy-1.png';
-import CopyImg2 from '../assets/images/image-copy-2.png';
+import TalkImg from '@assets/icons/ico-talk.svg';
+import CopyImg1 from '@assets/images/image-copy-1.png';
+import CopyImg2 from '@assets/images/image-copy-2.png';
 
 function ServiceSection() {
   return (

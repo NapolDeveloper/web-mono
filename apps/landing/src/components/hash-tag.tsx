@@ -1,12 +1,12 @@
 interface HashTagProps {
   content: string;
-  color: "green" | "orange" | "gray";
+  color: 'green' | 'orange' | 'gray';
 }
 
 const colorClasses = {
-  green: "text-green-500 border-green-500",
-  gray: "text-gray-600 border-gray-300",
-  orange: "text-orange-500 border-orange-500",
+  green: 'text-green-500 border-green-500',
+  gray: 'text-gray-600 border-gray-300',
+  orange: 'text-orange-500 border-orange-500',
 };
 
 function HashTag({ content, color }: HashTagProps) {
