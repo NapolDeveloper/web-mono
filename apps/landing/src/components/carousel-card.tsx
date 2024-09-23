@@ -3,7 +3,6 @@ import GroupMember from '@assets/images/image-group-member.png';
 import LocationIcon from '@assets/images/image-location.png';
 import HashTag from '@components/hash-tag';
 
-
 interface Tag {
   content: string;
   color: 'green' | 'orange' | 'gray';
@@ -36,8 +35,8 @@ function CarouselCard({
   ProfilePics,
 }: CarouselCardProps) {
   return (
-    <div className="flex justify-center tablet:w-[480px] tablet:px-[15px] pc:w-[480px] pc:px-[15px]">
-      <div className="group-card h-[347px] w-[450px] overflow-hidden rounded-[20px] shadow-suldak-card mobile:h-[167px] mobile:w-[200px] mobile:px-[16px] mobile:py-[20px] tablet:p-[40px] pc:p-[40px]">
+    <div className="flex h-full items-center justify-center tablet:w-[480px] tablet:px-[15px] pc:w-[480px] pc:px-[15px]">
+      <div className="group-card h-[347px] w-[450px] overflow-hidden rounded-[20px] shadow-suldak-card  mobile:h-[167px] mobile:w-[200px] mobile:px-[16px] mobile:py-[20px] tablet:p-[40px] pc:p-[40px]">
         <div className="tags flex gap-x-[12px] mobile:gap-x-[6px]">
           {tags.map((tag, index) => (
             <HashTag key={index} content={tag.content} color={tag.color} />
