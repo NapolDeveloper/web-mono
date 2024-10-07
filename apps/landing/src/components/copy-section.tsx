@@ -2,7 +2,7 @@ import SmallLogo from '@assets/icons/ico-copy-small.svg';
 import BigLogo from '@assets/icons/ico-copy-big.svg';
 import Line from '@assets/icons/ico-line.svg';
 import SmallLine from '@assets/icons/ico-line-small.svg';
-import Image from 'next/image';
+
 function CopySection() {
   return (
     <section className="flex h-[965px] w-full flex-col items-center justify-center bg-suldak-gray-100 py-[120px] text-[20px] font-light text-suldak-gray-900 mobile:h-[648px] mobile:py-[60px] mobile:text-[14px]">

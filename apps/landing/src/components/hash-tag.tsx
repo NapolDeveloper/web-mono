@@ -1,3 +1,5 @@
+'use client';
+
 interface HashTagProps {
   content: string;
   color: 'green' | 'orange' | 'gray';

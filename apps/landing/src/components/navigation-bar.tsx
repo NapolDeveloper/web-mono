@@ -3,7 +3,6 @@
 import HeadRight from '@assets/icons/ico-head-right.svg';
 import SmallLogo from '@assets/icons/ico-small-logo.svg';
 import BigLogo from '@assets/icons/ico-big-logo.svg';
-import Image from 'next/image';
 
 interface NavigationProps {
   scrollToReservation?: () => void;
@@ -24,7 +23,7 @@ function NavigationBar({ scrollToReservation }: NavigationProps) {
             <div className="mobile:hidden">즐거운 술 문화를 위한 플랫폼</div>
           </div>
           <div className="flex space-x-4">
-            {scrollToReservation && (
+            {scrollToReservation ? (
               <button
                 className="flex items-center rounded-[30px] bg-suldak-mint-500 px-[20px] py-[10px] text-[16px] text-white mobile:text-[14px]"
                 onClick={scrollToReservation}
@@ -32,7 +31,7 @@ function NavigationBar({ scrollToReservation }: NavigationProps) {
                 사전예약
                 <HeadRight className="ml-2" fill="white" />
               </button>
-            )}
+            ) : null}
             <button className="flex items-center rounded-[30px] bg-suldak-mint-500 px-[20px] py-[10px] text-[16px] text-white mobile:hidden">
               블로그 보기
               <HeadRight className="ml-2" fill="white" />
@@ -45,4 +44,3 @@ function NavigationBar({ scrollToReservation }: NavigationProps) {
 }
 
 export default NavigationBar;
-

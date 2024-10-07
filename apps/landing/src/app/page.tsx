@@ -1,4 +1,5 @@
 'use client';
+
 import { useEffect, useRef, useState } from 'react';
 import ServiceSection from '@components/service-section';
 import CopySection from '@components/copy-section';
@@ -40,4 +41,3 @@ function LandingPage() {
 }
 
 export default LandingPage;
-

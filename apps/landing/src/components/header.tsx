@@ -1,8 +1,10 @@
+'use client';
+
 import Image from 'next/image';
-import Lottie from 'lottie-react';
+// import Lottie from 'lottie-react';
 import HeadRight from '@assets/icons/ico-head-right.svg';
 import HeadImg from '@assets/images/image-head.png';
-import AnimationData from '@assets/images/animation-web-blog.json';
+// import AnimationData from '@assets/images/animation-web-blog.json';
 import VectorImg from '@assets/images/img-vector.png';
 interface HeaderProps {
   scrollToReservation: () => void;
@@ -15,33 +17,22 @@ function Header({ scrollToReservation }: HeaderProps) {
         <div className="flex w-full relative justify-center items-center bg-suldak-mint-500">
           <div className="flex w-full tablet:hidden mobile:hidden justify-center items-center">
             <div className="absolute bottom-0  justify-center items-center">
-              <Image
-                src={VectorImg}
-                width={1100}
-                height={444}
-                alt="bg-vector"
-                className="z-10"
-              />
+              <Image src={VectorImg} width={1100} height={444} alt="bg-vector" className="z-10" />
             </div>
             <div className="absolute z-20 bottom-4  justify-center items-center">
-              <Lottie
+              {/* <Lottie
                 animationData={AnimationData}
                 loop={true}
                 autoplay={true}
                 style={{ width: '1000px', height: '474px' }}
-              />
+              /> */}
             </div>
           </div>
           <div className="absolute justify-center items-center bottom-0 pc:hidden mobile:hidden">
             <Image src={HeadImg} alt="Header Image" height={743} width={600} />
           </div>
           <div className="absolute justify-center items-center bottom-0 pc:hidden tablet:hidden">
-            <Image
-              src={HeadImg}
-              alt="Header Small Image"
-              height={288}
-              width={355}
-            />
+            <Image src={HeadImg} alt="Header Small Image" height={288} width={355} />
           </div>
         </div>
       </div>

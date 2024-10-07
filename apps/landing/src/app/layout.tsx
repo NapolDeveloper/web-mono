@@ -2,6 +2,7 @@ import './globals.css';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://suldak.me'),
   title: '술닥술닥',
   description:
     '당신의 취향에 맞는 술과 모임을 한번에! 다채로운 큐레이션과 컨텐츠를 제공하는 새로운 주류 커뮤니티 플랫폼',

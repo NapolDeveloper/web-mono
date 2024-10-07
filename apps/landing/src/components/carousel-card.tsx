@@ -1,3 +1,5 @@
+'use client';
+
 import Image, { StaticImageData } from 'next/image';
 import GroupMember from '@assets/images/image-group-member.png';
 import LocationIcon from '@assets/images/image-location.png';
@@ -53,10 +55,7 @@ function CarouselCard({
         </div>
         <div className="mt-[26px] flex items-center mobile:mt-[18px]">
           {ProfilePics.map((pic, index) => (
-            <div
-              key={index}
-              className="relative h-[72px] w-[72px] mobile:h-[32px] mobile:w-[32px]"
-            >
+            <div key={index} className="relative h-[72px] w-[72px] mobile:h-[32px] mobile:w-[32px]">
               <Image src={pic.src} alt={pic.alt} fill quality={100} />
             </div>
           ))}

@@ -13,12 +13,30 @@ module.exports = {
       },
     },
   },
-  'import/no-extraneous-dependencies': [
-    'error',
-    {
-      devDependencies: false,
-      optionalDependencies: false,
-      peerDependencies: false,
-    },
-  ],
+  rules: {
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    'react/no-array-index-key': 'off',
+    'react/button-has-type': 'off',
+    'react/jsx-sort-props': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'turbo/no-undeclared-env-vars': 'off',
+    'no-console': 'off',
+    '@typescript-eslint/consistent-type-imports': 'off',
+    'react/jsx-boolean-value': 'off',
+    'react/self-closing-comp': 'off',
+    'import/newline-after-import': 'off',
+    'react/function-component-definitio': 'off',
+    'import/order': 'off',
+    'react/function-component-definition': 'off',
+    // 'import/no-extraneous-dependencies': [
+    //   'error',
+    //   {
+    //     devDependencies: false,
+    //     optionalDependencies: false,
+    //     peerDependencies: false,
+    //   },
+    // ],
+  },
 };

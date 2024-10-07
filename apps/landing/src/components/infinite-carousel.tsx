@@ -1,5 +1,7 @@
-import React, { useRef, useEffect, ReactNode } from 'react';
-import Image, { StaticImageData } from 'next/image';
+import type { ReactNode } from 'react';
+import React, { useRef, useEffect } from 'react';
+import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 interface InfiniteCarouselProps {
   items: (ReactNode | string | StaticImageData)[];
@@ -47,17 +49,17 @@ function InfiniteCarousel({
   const renderItems = () => {
     return items.concat(items).map((item, index) => (
       <div
+        className="inline-block shrink-0 mr-[8px]"
         key={index}
-        className={`inline-block shrink-0 mr-[8px]`}
         style={{ width: `${itemWidth}px`, height: `${itemHeight}px` }}
       >
         {typeof item === 'string' || isStaticImageData(item) ? (
           <Image
-            src={item}
             alt={`Carousel item ${index + 1}`}
-            width={itemWidth}
             height={itemHeight}
             objectFit="cover"
+            src={item}
+            width={itemWidth}
           />
         ) : (
           item
@@ -67,7 +69,7 @@ function InfiniteCarousel({
   };
 
   return (
-    <div ref={carouselRef} className="flex overflow-hidden whitespace-nowrap">
+    <div className="flex overflow-hidden whitespace-nowrap" ref={carouselRef}>
       {renderItems()}
     </div>
   );
