@@ -9,12 +9,6 @@
       "@apis/*": ["./apis/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "svg.d.ts"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "svg.d.ts"],
   "exclude": ["node_modules"]
 }
