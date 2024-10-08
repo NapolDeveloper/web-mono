@@ -30,6 +30,10 @@ module.exports = {
     'react/function-component-definitio': 'off',
     'import/order': 'off',
     'react/function-component-definition': 'off',
+    'node/no-missing-require': 'off',
+    'node/no-missing-import': 'off',
+    'node/no-extraneous-require': 'off',
+    'node/no-extraneous-import': 'off',
     // 'import/no-extraneous-dependencies': [
     //   'error',
     //   {
