@@ -78,18 +78,25 @@ function GroupCarousel() {
     ));
   };
   return (
-    <section className="flex relative mt-[64px] w-full bg-white mobile:mt-[40px]">
-      {' '}
-      <div className="flex carousel-container w-full max-w-[1890px] overflow-x-hidden">
-        {' '}
+    <section className="flex relative mobile:mt-[40px] mt-[64px] w-full bg-white ">
+      <div className="flex carousel-container mobile:hidden w-screen max-w-[2100px] overflow-x-hidden">
         <InfiniteCarousel
           items={renderCarouselItems()}
-          speed={2}
+          speed={4}
           direction="left"
           itemWidth={480}
           itemHeight={380}
-        />{' '}
-      </div>{' '}
+        />
+      </div>
+      <div className="flex carousel-container tablet:hidden pc:hidden w-screen max-w-[2100px] overflow-x-hidden">
+        <InfiniteCarousel
+          items={renderCarouselItems()}
+          speed={2.25}
+          direction="left"
+          itemWidth={210}
+          itemHeight={188}
+        />
+      </div>
     </section>
   );
 }

@@ -23,7 +23,7 @@ const config: Omit<Config, 'content'> = {
         'suldak-mint-200': '#9CE5EA',
       },
       boxShadow: {
-        'suldak-card': '2px 2px 20px -3px rgba(0, 0, 0, 0.13)',
+        'suldak-card': '2px 2px 14px -3px rgba(0, 0, 0, 0.13)',
       },
       padding: {
         '18px': '18px',

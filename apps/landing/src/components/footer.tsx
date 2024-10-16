@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 interface FooterProps {
@@ -15,15 +16,39 @@ const Footer: React.ForwardRefRenderFunction<HTMLDivElement, FooterProps> = (
     >
       <div className="flex-col h-[100px]">
         <div className="flex items-center">
-          <div>푸터 메뉴</div>
+          <Link
+            href="https://suldak.notion.site/8c83b32c990b4cbf9d34ad8944214284"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            이용약관
+          </Link>
           <div className="mx-2 w-[1px] h-[8px] mobile:h-[10px] bg-white opacity-50"></div>
-          <div>푸터 메뉴</div>
+          <Link
+            href="https://suldak.notion.site/6993e29d3a7d4625ab12fc2807cd712b"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            개인정보 처리방침
+          </Link>
           <div className="mx-2 w-[1px] h-[8px] mobile:h-[10px] bg-white opacity-50"></div>
-          <div>푸터 메뉴</div>
+          <Link
+            href="https://www.instagram.com/suldak.official/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            인스타그램
+          </Link>
           <div className="mx-2 w-[1px] h-[8px] mobile:h-[10px] bg-white opacity-50"></div>
-          <div>푸터 메뉴</div>
+          <Link
+            href="https://suldak.tistory.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            블로그
+          </Link>
           <div className="mx-2 w-[1px] h-[8px] mobile:h-[10px] bg-white opacity-50"></div>
-          <div>푸터 메뉴</div>
+          <a href="mailto:suldak.official@gmail.com">Contact</a>
         </div>
         <div>Copyright © 술닥술닥 all rights reserved</div>
       </div>
@@ -32,4 +57,3 @@ const Footer: React.ForwardRefRenderFunction<HTMLDivElement, FooterProps> = (
 };
 
 export default React.forwardRef(Footer);
-
