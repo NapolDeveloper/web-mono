@@ -1,50 +1,65 @@
 'use client';
 
 import Image from 'next/image';
-import HeadRight from '@assets/icons/ico-head-right.svg';
-import HeadImg from '@assets/images/image-head.png';
-import AnimationData from '@assets/images/animation-web-blog.json';
-import VectorImg from '@assets/images/img-vector.png';
 import dynamic from 'next/dynamic';
+import HeadRight from '@/assets/icons/ico-head-right.svg';
+import HeadImg from '@/assets/images/image-head.png';
+import AnimationData from '@/assets/images/animation-web-blog.json';
+import VectorImg from '@/assets/images/img-vector.png';
+
 interface HeaderProps {
   scrollToReservation: () => void;
 }
 
+// Lottie 컴포넌트를 동적으로 불러오기
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
-function Header({ scrollToReservation }: HeaderProps) {
+function Header({ scrollToReservation }: HeaderProps): JSX.Element {
   return (
     <>
       <div className="flex relative tablet:h-[800px] pc:h-[900px] mobile:h-[600px] w-full bg-suldak-mint-500">
         <div className="flex w-full relative justify-center items-center bg-suldak-mint-500">
+          {/* Desktop View Animation */}
           <div className="flex w-full tablet:hidden mobile:hidden justify-center items-center">
-            <div className="absolute bottom-0  justify-center items-center">
+            <div className="absolute bottom-0 justify-center items-center">
               <Image
                 src={VectorImg}
                 width={1100}
                 height={444}
-                alt="bg-vector"
+                alt="배경 벡터 이미지"
                 className="z-10"
+                priority
               />
             </div>
-            <div className="absolute z-20 bottom-4  justify-center items-center">
+            <div className="absolute z-20 bottom-4 justify-center items-center">
               <Lottie
                 animationData={AnimationData}
-                loop={true}
-                autoplay={true}
+                loop
+                autoplay
                 style={{ width: '1000px', height: '474px' }}
               />
             </div>
           </div>
+
+          {/* Tablet View Image */}
           <div className="absolute justify-center items-center bottom-0 pc:hidden mobile:hidden">
-            <Image src={HeadImg} alt="Header Image" height={743} width={600} />
+            <Image
+              src={HeadImg}
+              alt="태블릿용 헤더 이미지"
+              height={743}
+              width={600}
+              priority
+            />
           </div>
+
+          {/* Mobile View Image */}
           <div className="absolute justify-center items-center bottom-0 pc:hidden tablet:hidden">
             <Image
               src={HeadImg}
-              alt="Header Small Image"
+              alt="모바일용 헤더 이미지"
               height={288}
               width={355}
+              priority
             />
           </div>
         </div>
@@ -63,6 +78,7 @@ function Header({ scrollToReservation }: HeaderProps) {
           당신의 취향을 술닥술닥에서 만나보세요.
         </div>
         <button
+          type="button"
           className="mx-auto flex items-center rounded-full bg-white px-[20px] py-[16px] font-bold text-suldak-mint-500"
           onClick={scrollToReservation}
         >

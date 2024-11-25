@@ -6,9 +6,16 @@
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@assets/*": ["./src/assets/*"],
-      "@apis/*": ["./apis/*"]
+      "@apis/*": ["./apis/*"],
+      "@utils/*": ["./utils/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "svg.d.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "svg.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

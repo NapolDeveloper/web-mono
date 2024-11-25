@@ -9,6 +9,12 @@ interface NavigationProps {
 }
 
 function NavigationBar({ scrollToReservation }: NavigationProps) {
+  const handleBlogClick = () => {
+    if (typeof window !== 'undefined') {
+      window.open('https://suldak.tistory.com/', '_blank');
+    }
+  };
+
   return (
     <div className="fixed bottom-0 z-40 flex w-full justify-center">
       <div className="w-full pc:w-[62.5%] bg-white shadow-suldak-card mobile:rounded-t-[20px] pc:rounded-[12px] tablet:rounded-[12px]">
@@ -32,7 +38,10 @@ function NavigationBar({ scrollToReservation }: NavigationProps) {
                 <HeadRight className="ml-2" fill="white" />
               </button>
             ) : null}
-            <button className="flex items-center rounded-[30px] bg-suldak-mint-500 px-[20px] py-[10px] text-[16px] text-white mobile:hidden">
+            <button
+              className="flex items-center rounded-[30px] bg-suldak-mint-500 px-[20px] py-[10px] text-[16px] text-white mobile:hidden"
+              onClick={handleBlogClick}
+            >
               블로그 보기
               <HeadRight className="ml-2" fill="white" />
             </button>
