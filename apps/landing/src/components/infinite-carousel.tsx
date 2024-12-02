@@ -49,17 +49,26 @@ function InfiniteCarousel({
   const renderItems = () => {
     return items.concat(items).map((item, index) => (
       <div
-        className="flex bg-white relative items-center shrink-0 mr-[20px] mobile:mr-[10px]"
+        className="flex  relative items-center shrink-0 mr-[20px] mobile:mr-[10px]"
         key={index}
         style={{ width: `${itemWidth}px`, height: `${itemHeight}px` }}
       >
         {typeof item === 'string' || isStaticImageData(item) ? (
-          <Image
-            alt={`Carousel item ${index + 1}`}
-            fill
-            src={item}
-            className="relative"
-          />
+          <div
+            className="flex overflow-hidden rounded-[20px] mobile:rounded-[12px]"
+            style={{ width: `${itemWidth}px`, height: `${itemHeight}px` }}
+          >
+            <Image
+              alt={`Carousel item ${index + 1}`}
+              src={item}
+              layout="responsive"
+              objectFit="cover"
+              width={itemWidth}
+              height={itemHeight}
+              loading="lazy"
+              placeholder="blur"
+            />
+          </div>
         ) : (
           item
         )}
