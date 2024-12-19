@@ -10,6 +10,7 @@ import NavigationBar from '@/components/navigation-bar';
 import ReservationSection from '@/components/reservation-section';
 import ReviewSection from '@/components/review-section';
 import Footer from '@/components/footer';
+import GlobalNavigationBar from '@/components/global-navigation-bar';
 
 type ScrollHandler = () => void;
 
@@ -34,6 +35,7 @@ const LandingPage = (): JSX.Element | null => {
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
+      <GlobalNavigationBar />
       <Header scrollToReservation={scrollToReservation} />
       <CopySection />
       <GroupSection />

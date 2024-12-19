@@ -26,7 +26,7 @@ export const useEnrollReservation = () => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/reservation/user`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/reservation/api/reservation/user`,
         {
           method: 'POST',
           headers: {
@@ -41,9 +41,15 @@ export const useEnrollReservation = () => {
         throw new Error('Network response was not ok');
       }
 
-      const data: EnrollResponse = await response.json();
-      console.log('Reservation enrolled successfully:', data);
-      return data;
+      const enrollResponse = (await response.json()) as EnrollResponse;
+
+      // 기본적인 응답 형식 확인
+      if (typeof enrollResponse !== 'object') {
+        throw new Error('Invalid response format');
+      }
+
+      console.log('Reservation enrolled successfully:', enrollResponse);
+      return enrollResponse;
     } catch (err) {
       console.error('Error enrolling reservation:', err);
       setError(

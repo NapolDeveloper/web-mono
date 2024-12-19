@@ -1,0 +1,49 @@
+<svg width="226" height="226" viewBox="0 0 226 226" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#236;&#149;&#136;&#236;&#156;&#164;&#236;&#167;&#132;">
+<g clip-path="url(#clip0_5058_17243)">
+<rect width="226" height="226" rx="20" fill="#08BECA"/>
+<circle id="Ellipse 11" cx="112.033" cy="172.833" r="126.931" fill="white"/>
+<g id="Group 427322264">
+<ellipse id="Ellipse 24" cx="77.4258" cy="140.832" rx="5.23148" ry="5.23148" fill="#2C2726"/>
+<ellipse id="Ellipse 25" cx="148.783" cy="140.832" rx="5.23148" ry="5.23148" fill="#2C2726"/>
+</g>
+<path id="Union" d="M127.357 167.515C119.044 160.534 106.917 160.534 98.6037 167.515L92.7544 172.428C88.2792 176.186 88.5529 183.157 93.3089 186.553L99.9899 191.323C107.761 196.872 118.199 196.872 125.971 191.323L132.652 186.553C137.408 183.157 137.681 176.186 133.206 172.428L127.357 167.515Z" fill="#FF9403"/>
+<g id="Group 427322279">
+<path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M0 121.348V112.007L4.0166 115.428C18.5148 127.773 36.9352 134.554 55.9776 134.554H146.691V141.668H55.9776C35.5048 141.668 15.6925 134.47 0 121.348Z" fill="#353535"/>
+<path id="Subtract_2" fill-rule="evenodd" clip-rule="evenodd" d="M226 121.348V112.007L221.983 115.428C207.485 127.773 189.065 134.554 170.022 134.554H79.3092V141.668H170.022C190.495 141.668 210.308 134.47 226 121.348Z" fill="#353535"/>
+<g id="Group 427322280">
+<g id="Group 427322277">
+<g id="Group 427322278">
+<g id="Group 427322276">
+<g id="Group 427322275">
+<g id="Group 427322273">
+<ellipse id="Ellipse 44" cx="65.6883" cy="139.034" rx="37.2288" ry="26.6994" fill="#00B2EA"/>
+<ellipse id="Ellipse 46" cx="69.1603" cy="138.948" rx="23.1231" ry="16.113" fill="#B4EDFF"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g id="Group 427322278_2">
+<g id="Group 427322278_3">
+<g id="Group 427322276_2">
+<g id="Group 427322275_2">
+<g id="Group 427322273_2">
+<ellipse id="Ellipse 44_2" cx="37.2288" cy="26.6994" rx="37.2288" ry="26.6994" transform="matrix(-1 0 0 1 197.711 112.334)" fill="#00B2EA"/>
+<ellipse id="Ellipse 46_2" cx="23.1231" cy="16.113" rx="23.1231" ry="16.113" transform="matrix(-1 0 0 1 180.134 122.835)" fill="#B4EDFF"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="225" height="225" rx="19.5" stroke="#08BECA"/>
+</g>
+<defs>
+<clipPath id="clip0_5058_17243">
+<rect width="226" height="226" rx="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>
