@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import GlobalNavigationBar from '@/components/global-navigation-bar';
-import CrewDescriptHeader from '@/components/crew/crew-descript-header';
+import CrewPageHeader from '@/components/crew/crew-page-header';
 import MascotSection from '@/components/crew/mascot-section';
 import CrewSection from '@/components/crew/crew-section';
 import Footer from '@/components/footer';
@@ -21,7 +21,7 @@ const OurCrewPage = (): JSX.Element | null => {
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <GlobalNavigationBar />
-      <CrewDescriptHeader />
+      <CrewPageHeader />
       <MascotSection />
       <CrewSection />
       <Footer />
