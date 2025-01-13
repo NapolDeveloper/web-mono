@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Logo from '@assets/icons/ico-medium-logo.svg';
 import Bars from '@assets/icons/ico-bars.svg';
@@ -8,20 +8,11 @@ import Link from 'next/link';
 
 function GlobalNavigationBar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleContactClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (typeof window !== 'undefined') {
-      const footer = document.getElementById('footer');
-      if (footer) {
-        footer.scrollIntoView({
-          behavior: 'smooth',
-          block: 'end',
-        });
-      }
-    }
-    setIsMenuOpen(false);
+  const handleContactClick = () => {
+    router.push('/contact');
   };
 
   useEffect(() => {

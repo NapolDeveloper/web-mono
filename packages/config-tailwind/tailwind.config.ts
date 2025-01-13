@@ -6,6 +6,7 @@ const config: Omit<Config, 'content'> = {
     extend: {
       colors: {
         'suldak-gray-900': '#1e1e1e',
+        'suldak-gray-800': '#3c3c3c',
         'suldak-gray-700': '#646464',
         'suldak-gray-600': '#8e8e8e',
         'suldak-gray-500': '#bebebe',
