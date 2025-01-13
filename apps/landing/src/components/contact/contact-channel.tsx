@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-
-interface ContactChannelProps {
+import ContactChannelImage from './contact-channel-image';
+interface Props {
   name: string;
   link?: string;
   copy?: string;
@@ -10,30 +10,7 @@ interface ContactChannelProps {
   onCopy?: () => void;
 }
 
-interface ContactChannelImageProps {
-  link?: string;
-}
-
-function ContactChannelImage({ link }: ContactChannelImageProps) {
-  return link ? (
-    <Link
-      href={link}
-      className="bg-[#EDF7F9] w-[120px] h-[120px] rounded-full"
-      target="_blank"
-      rel="noopener noreferrer"
-    />
-  ) : (
-    <div className="bg-[#EDF7F9] w-[120px] h-[120px] rounded-full"></div>
-  );
-}
-
-function ContactChannel({
-  name,
-  link,
-  copy,
-  show,
-  onCopy,
-}: ContactChannelProps) {
+function ContactChannel({ name, link, copy, show, onCopy }: Props) {
   const handleCopy = async () => {
     if (copy) {
       try {

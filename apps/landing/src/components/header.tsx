@@ -7,14 +7,14 @@ import HeadImg from '@/assets/images/image-head.png';
 import AnimationData from '@/assets/images/animation-web-blog.json';
 import VectorImg from '@/assets/images/img-vector.png';
 
-interface HeaderProps {
+interface Props {
   scrollToReservation: () => void;
 }
 
 // Lottie 컴포넌트를 동적으로 불러오기
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
-function Header({ scrollToReservation }: HeaderProps): JSX.Element {
+function Header({ scrollToReservation }: Props): JSX.Element {
   return (
     <>
       <div className="flex relative tablet:h-[800px] pc:h-[900px] mobile:h-[600px] w-full bg-suldak-mint-500">

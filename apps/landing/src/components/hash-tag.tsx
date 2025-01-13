@@ -1,6 +1,6 @@
 'use client';
 
-interface HashTagProps {
+interface Props {
   content: string;
   color: 'green' | 'orange' | 'gray';
 }
@@ -11,7 +11,7 @@ const colorClasses = {
   orange: 'text-orange-500 border-orange-500',
 };
 
-function HashTag({ content, color }: HashTagProps) {
+function HashTag({ content, color }: Props) {
   return (
     <div
       className={`flex h-[53px] items-center justify-center text-[24px] font-normal mobile:h-[22px] mobile:px-[6px] mobile:py-[4px] mobile:text-[12px] ${colorClasses[color]} rounded-lg border px-[14px] py-[12px] mobile:rounded-[2px]`}

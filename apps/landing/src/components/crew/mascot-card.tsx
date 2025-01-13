@@ -1,6 +1,6 @@
 import CrewTag from './crew-tag';
 
-interface MascotCardProps {
+interface Props {
   Mascot: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   MobileMascot: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   name: string;
@@ -16,7 +16,7 @@ function MascotCard({
   role,
   description,
   tags,
-}: MascotCardProps) {
+}: Props) {
   return (
     <div className="flex mobile:w-[350px] w-[580px] h-[504px] mobile:h-[368px] justify-center items-center rounded-[40px] border border-gray-400 py-[40px] px-[118px] mobile:py-[20px]">
       <div className="flex flex-col justify-center items-center">

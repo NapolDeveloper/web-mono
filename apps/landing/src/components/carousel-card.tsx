@@ -15,7 +15,7 @@ interface ProfilePic {
   alt: string;
 }
 
-interface CarouselCardProps {
+interface Props {
   tags: Tag[];
   title: string;
   location: string;
@@ -35,7 +35,7 @@ function CarouselCard({
   currentMembers,
   maxMembers,
   ProfilePics,
-}: CarouselCardProps) {
+}: Props) {
   return (
     <div className="flex h-full items-center justify-center tablet:w-[480px] tablet:px-[15px] pc:w-[480px] pc:px-[15px] mobile:h-[167px] mobile:w-[200px]">
       <div className="group-card h-[347px] w-[450px] overflow-hidden rounded-[20px] shadow-suldak-card  mobile:h-[167px] mobile:rounded-[15px] mobile:w-[200px] mobile:px-[16px] mobile:py-[20px] tablet:p-[40px] pc:p-[40px]">

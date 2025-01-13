@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 
-interface InfiniteCarouselProps {
+interface Props {
   items: (ReactNode | string | StaticImageData)[];
   speed?: number;
   direction?: 'left' | 'right';
@@ -17,7 +17,7 @@ function InfiniteCarousel({
   direction = 'left',
   itemWidth,
   itemHeight,
-}: InfiniteCarouselProps) {
+}:Props) {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

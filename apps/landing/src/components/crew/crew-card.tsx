@@ -2,7 +2,7 @@ import WineBarIcon from '@assets/icons/ico-wine-bar.svg';
 import HeartIcon from '@assets/icons/ico-heart.svg';
 import MessageIcon from '@assets/icons/ico-message.svg';
 
-interface CrewCardProps {
+interface Props {
   Crew: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   name: string;
   role: string;
@@ -20,7 +20,7 @@ function CrewCard({
   alchol,
   favor,
   comment,
-}: CrewCardProps) {
+}: Props) {
   return (
     <div className="flex w-[580px] tablet:w-[284px] mobile:w-[160px] mobile:h-[240px] tablet:h-[540px] tablet:flex-col mobile:flex-col h-[226px] justify-center items-center">
       <div className="relative flex-shrink-0 w-[226px] h-[226px] tablet:w-[284px] tablet:h-[284px] mobile:w-[160px] mobile:h-[160px] overflow-hidden">

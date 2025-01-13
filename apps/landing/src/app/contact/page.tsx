@@ -6,7 +6,7 @@ import GlobalNavigationBar from '@/components/global-navigation-bar';
 import { useState } from 'react';
 import MessageIcon from '@assets/icons/ico-big-message.svg';
 
-const ContactPage = (): JSX.Element | null => {
+const ContactPage = () => {
   const [showCopyNotification, setShowCopyNotification] = useState(false);
 
   const handleCopy = () => {

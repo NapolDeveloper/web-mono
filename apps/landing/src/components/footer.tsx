@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
 
-interface FooterProps {
+interface Props {
   ref?: React.RefObject<HTMLDivElement>;
 }
 
-const Footer: React.ForwardRefRenderFunction<HTMLDivElement, FooterProps> = (
+const Footer: React.ForwardRefRenderFunction<HTMLDivElement, Props> = (
   props,
   ref,
 ) => {
