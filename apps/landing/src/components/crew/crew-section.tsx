@@ -1,21 +1,19 @@
 import TalkImg from '@assets/icons/ico-talk.svg';
 import CrewCard from './crew-card';
-import GyuriImage from '@assets/icons/ico-member-gyuri.svg';
-import HyunjiImage from '@assets/icons/ico-member-hyunji.svg';
-import GeuntaeImage from '@assets/icons/ico-member-geuntae.svg';
-import SeungminImage from '@assets/icons/ico-member-seungmin.svg';
-import JaehoonImage from '@assets/icons/ico-member-jaehoon.svg';
-import HyunjaeImage from '@assets/icons/ico-member-hyunjae.svg';
-import GichanImage from '@assets/icons/ico-member-gichan.svg';
-import HwijungImage from '@assets/icons/ico-member-hwijung.svg';
-import YoonjinImage from '@assets/icons/ico-member-yoonjin.svg';
-import EunjinImage from '@assets/icons/ico-member-eunjin.svg';
-import HiwonImage from '@assets/icons/ico-member-hiwon.svg';
-
-type SVGComponent = React.FC<React.SVGProps<SVGSVGElement>>;
+import Gyuri from '@assets/icons/ico-member-gyuri.svg';
+import Hyunji from '@assets/icons/ico-member-hyunji.svg';
+import Geuntae from '@assets/icons/ico-member-geuntae.svg';
+import Seungmin from '@assets/icons/ico-member-seungmin.svg';
+import Jaehoon from '@assets/icons/ico-member-jaehoon.svg';
+import Hyunjae from '@assets/icons/ico-member-hyunjae.svg';
+import Gichan from '@assets/icons/ico-member-gichan.svg';
+import Hwijung from '@assets/icons/ico-member-hwijung.svg';
+import Yoonjin from '@assets/icons/ico-member-yoonjin.svg';
+import Eunjin from '@assets/icons/ico-member-eunjin.svg';
+import Hiwon from '@assets/icons/ico-member-hiwon.svg';
 
 interface CrewData {
-  Crew: SVGComponent;
+  Crew: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   name: string;
   role: string;
   mobileRole: string;
@@ -24,17 +22,7 @@ interface CrewData {
   comment: string;
 }
 
-const Gyuri = GyuriImage as SVGComponent;
-const Hyunji = HyunjiImage as SVGComponent;
-const Geuntae = GeuntaeImage as SVGComponent;
-const Seungmin = SeungminImage as SVGComponent;
-const Jaehoon = JaehoonImage as SVGComponent;
-const Hyunjae = HyunjaeImage as SVGComponent;
-const Gichan = GichanImage as SVGComponent;
-const HwiJung = HwijungImage as SVGComponent;
-const Yoonjin = YoonjinImage as SVGComponent;
-const Eunjin = EunjinImage as SVGComponent;
-const Hiwon = HiwonImage as SVGComponent;
+
 
 const crew: CrewData[] = [
   {
@@ -116,7 +104,7 @@ const crew: CrewData[] = [
     comment: '술닥술닥 화이팅!',
   },
   {
-    Crew: HwiJung,
+    Crew: Hwijung,
     name: '김휘정',
     mobileRole: '프로덕트를 제작하는 UXUI디자이너',
     role: '사용자들이 술닥술닥을 쉽고 편하게 사용하기 위해 프로덕트를 제작하고 있는 UXUI디자이너입니다.',

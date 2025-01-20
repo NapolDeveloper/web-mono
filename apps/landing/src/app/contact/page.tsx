@@ -5,6 +5,10 @@ import Footer from '@/components/footer';
 import GlobalNavigationBar from '@/components/global-navigation-bar';
 import { useState } from 'react';
 import MessageIcon from '@assets/icons/ico-big-message.svg';
+import EmailIcon from '@assets/icons/ico-email.svg';
+import BlogIcon from '@assets/icons/ico-blog.svg';
+import KakaoIcon from '@assets/icons/ico-kakao.svg';
+import InstagramIcon from '@assets/icons/ico-instagram.svg';
 
 const ContactPage = () => {
   const [showCopyNotification, setShowCopyNotification] = useState(false);
@@ -34,19 +38,26 @@ const ContactPage = () => {
               name="E-mail"
               copy="suldak.official@gmail.com"
               onCopy={handleCopy}
+              Icon={EmailIcon}
             />
             <ContactChannel
               name="Blog"
               link="http://suldak.tistory.com"
               show="suldak.tistory.com"
+              Icon={BlogIcon}
             />
           </div>
           <div className="flex mobile:flex-col tablet:flex-col gap-[40px] mobile:gap-[20px]">
-            <ContactChannel name="Kakao talk" />
+            <ContactChannel
+              name="Kakao talk"
+              link="http://pf.kakao.com/_xdHqHG/friend"
+              Icon={KakaoIcon}
+            />
             <ContactChannel
               name="Instagram"
               show="@suldak.official"
               link="https://www.instagram.com/suldak.official/"
+              Icon={InstagramIcon}
             />
           </div>
         </div>
@@ -55,7 +66,8 @@ const ContactPage = () => {
 
       {/* 이메일 복사 알림*/}
       <div
-        className={`fixed bottom-[20px] left-1/2 w-[335px] h-[45px] justify-center items-center flex transform -translate-x-1/2 bg-suldak-gray-800 text-white px-4 py-2 rounded-[10px] transition-opacity duration-300 ${
+        style={{ top: 'calc(100vh - 80px)' }}
+        className={`fixed z-40 left-1/2 w-[335px] h-[45px] justify-center items-center flex transform -translate-x-1/2 bg-suldak-gray-800 text-white px-4 py-2 rounded-[10px] transition-opacity duration-300 ${
           showCopyNotification ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >

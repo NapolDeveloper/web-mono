@@ -4,35 +4,30 @@ import TalkImg from '@assets/icons/ico-talk.svg';
 import MascotCard from '@/components/crew/mascot-card';
 import SmallAriMascot from '@assets/icons/ico-small-ari.svg';
 import SmallCoriMascot from '@assets/icons/ico-small-cori.svg';
-// SVG 컴포넌트를 위한 타입 정의
-type SVGComponent = React.FC<React.SVGProps<SVGSVGElement>>;
+
 
 interface MascotData {
-  Mascot: SVGComponent;
-  MobileMascot: SVGComponent; // 모바일용 마스코트 추가
+  Mascot: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  MobileMascot: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   name: string;
   role: string;
   description: string;
   tags: string[];
 }
 
-const ariMascot = AriMascot as SVGComponent;
-const coriMascot = CoriMascot as SVGComponent;
-const smallAriMascot = SmallAriMascot as SVGComponent;
-const smallCoriMascot = SmallCoriMascot as SVGComponent;
 
 const mascots: MascotData[] = [
   {
-    Mascot: ariMascot,
-    MobileMascot: smallAriMascot,
+    Mascot: AriMascot,
+    MobileMascot: SmallAriMascot,
     name: '아리',
     role: '술닥술닥의 주류 담당',
     description: '알코올계의 백과사전 병아리',
     tags: ['#소맥', '#모임좋아', '#새로운 술 환영'],
   },
   {
-    Mascot: coriMascot,
-    MobileMascot: smallCoriMascot,
+    Mascot: CoriMascot,
+    MobileMascot: SmallCoriMascot,
     name: '코리',
     role: '술닥술닥의 맛집 담당',
     description: '맛잘알 갈매기',
