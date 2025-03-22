@@ -50,7 +50,7 @@ function ReservationSection(props: any, ref: ForwardedRef<HTMLDivElement>) {
           술닥술닥 사전예약
         </div>
         <div className="mb-[40px] text-center text-[30px] mobile:text-[16px]">
-          메일주소를 입력하시면 술닥술닥의
+          메일주소를 입력하시면 술닥술닥의 &nbsp;
           <br className="pc:hidden" />
           오픈 소식을 알려드릴게요!
         </div>
