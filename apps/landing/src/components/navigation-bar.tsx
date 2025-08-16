@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import HeadRight from '@assets/icons/ico-head-right.svg';
-import SmallLogo from '@assets/icons/ico-small-logo.svg';
-import BigLogo from '@assets/icons/ico-big-logo.svg';
+import HeadRight from "@assets/icons/ico-head-right.svg";
+import SmallLogo from "@assets/icons/ico-small-logo.svg";
+import BigLogo from "@assets/icons/ico-big-logo.svg";
 
 interface NavigationProps {
   scrollToReservation?: () => void;
 }
 
 function NavigationBar({ scrollToReservation }: NavigationProps) {
-  const handleBlogClick = () => {
-    if (typeof window !== 'undefined') {
-      window.open('https://suldak.tistory.com/', '_blank');
+  const handleInstagramClick = () => {
+    if (typeof window !== "undefined") {
+      window.open("https://www.instagram.com/suldak.official/", "_blank");
     }
   };
 
@@ -40,9 +40,9 @@ function NavigationBar({ scrollToReservation }: NavigationProps) {
             ) : null}
             <button
               className="flex items-center rounded-[30px] bg-suldak-mint-500 px-[20px] py-[10px] text-[16px] text-white mobile:hidden"
-              onClick={handleBlogClick}
+              onClick={handleInstagramClick}
             >
-              블로그 보기
+              인스타그램
               <HeadRight className="ml-2" fill="white" />
             </button>
           </div>
