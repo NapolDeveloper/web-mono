@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import type { ForwardedRef } from 'react';
-import { forwardRef, useState } from 'react';
-import toast from 'react-hot-toast';
-import ReservationImg from '@assets/images/bg-reservation.png';
-import { useEnrollReservation } from '@apis/use-enroll-reservation';
+import Image from "next/image";
+import type { ForwardedRef } from "react";
+import { forwardRef, useState } from "react";
+import toast from "react-hot-toast";
+import ReservationImg from "@assets/images/bg-reservation.png";
+import { useEnrollReservation } from "@apis/use-enroll-reservation";
 
 function ReservationSection(props: any, ref: ForwardedRef<HTMLDivElement>) {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [enrollmentStatus, setEnrollmentStatus] = useState<
-    'success' | 'error' | null
+    "success" | "error" | null
   >(null);
   const { mutate, isLoading } = useEnrollReservation();
 
@@ -18,15 +18,15 @@ function ReservationSection(props: any, ref: ForwardedRef<HTMLDivElement>) {
     if (email.trim()) {
       try {
         const data = await mutate(email);
-        if (process.env.NODE_ENV === 'development') {
-          console.log('Enrollment response:', data);
+        if (process.env.NODE_ENV === "development") {
+          console.log("Enrollment response:", data);
         }
-        toast.success('성공적으로 등록되었습니다!');
-        setEmail('');
-        setEnrollmentStatus('success');
+        toast.success("성공적으로 등록되었습니다!");
+        setEmail("");
+        setEnrollmentStatus("success");
       } catch (error) {
-        toast.error(' 오류: 다시 시도해주세요.');
-        setEnrollmentStatus('error');
+        toast.error(" 오류: 다시 시도해주세요.");
+        setEnrollmentStatus("error");
       }
     }
   };
@@ -50,8 +50,7 @@ function ReservationSection(props: any, ref: ForwardedRef<HTMLDivElement>) {
           술닥술닥 사전예약
         </div>
         <div className="mb-[40px] text-center text-[30px] mobile:text-[16px]">
-          메일주소를 입력하시면 술닥술닥의 &nbsp;
-          <br className="pc:hidden" />
+          메일주소를 입력하시면 술닥술닥의 <br className="pc:hidden" />
           오픈 소식을 알려드릴게요!
         </div>
         <div className="flex flex-col items-center space-y-4">
@@ -69,23 +68,23 @@ function ReservationSection(props: any, ref: ForwardedRef<HTMLDivElement>) {
               disabled={isLoading || !email.trim()}
               onClick={handleSubscribe}
             >
-              {isLoading ? '처리 중...' : 'Subscribe'}
+              {isLoading ? "처리 중..." : "Subscribe"}
             </button>
             <button
               className="h-[68px] w-[233px] rounded-[10px] bg-white text-[25px] font-bold text-suldak-mint-500 mobile:h-[48px] mobile:w-[330px] mobile:text-[16px] tablet:w-[600px] pc:hidden"
               disabled={isLoading || !email.trim()}
               onClick={handleSubscribe}
             >
-              {isLoading ? '처리 중...' : '제출하기'}
+              {isLoading ? "처리 중..." : "제출하기"}
             </button>
           </div>
           <div className="h-[24px] text-center">
-            {enrollmentStatus === 'success' && (
+            {enrollmentStatus === "success" && (
               <div className="text-black">
                 사전예약이 완료되었습니다. 감사합니다.
               </div>
             )}
-            {enrollmentStatus === 'error' && (
+            {enrollmentStatus === "error" && (
               <div className="text-red-500">다시 시도해주세요.</div>
             )}
           </div>
@@ -97,6 +96,6 @@ function ReservationSection(props: any, ref: ForwardedRef<HTMLDivElement>) {
 
 const ForwardedReservationSection = forwardRef(ReservationSection);
 
-ForwardedReservationSection.displayName = 'ReservationSection';
+ForwardedReservationSection.displayName = "ReservationSection";
 
 export default ForwardedReservationSection;
