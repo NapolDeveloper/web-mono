@@ -3,99 +3,54 @@
 import Image from "next/image";
 import type { ForwardedRef } from "react";
 import { forwardRef, useState } from "react";
-import toast from "react-hot-toast";
 import ReservationImg from "@assets/images/bg-reservation.png";
-import { useEnrollReservation } from "@apis/use-enroll-reservation";
+import AppStore from "@/assets/images/ico-sns-apple-mint.png";
+import GooglePlay from "@/assets/images/ico-sns-playstore.png";
 
-function ReservationSection(props: any, ref: ForwardedRef<HTMLDivElement>) {
-  const [email, setEmail] = useState("");
-  const [enrollmentStatus, setEnrollmentStatus] = useState<
-    "success" | "error" | null
-  >(null);
-  const { mutate, isLoading } = useEnrollReservation();
-
-  const handleSubscribe = async () => {
-    if (email.trim()) {
-      try {
-        const data = await mutate(email);
-        if (process.env.NODE_ENV === "development") {
-          console.log("Enrollment response:", data);
-        }
-        toast.success("성공적으로 등록되었습니다!");
-        setEmail("");
-        setEnrollmentStatus("success");
-      } catch (error) {
-        toast.error(" 오류: 다시 시도해주세요.");
-        setEnrollmentStatus("error");
-      }
+function ReservationSection() {
+  const handleAppStoreClick = () => {
+    if (typeof window !== "undefined") {
+      window.open("https://apps.apple.com/kr/app/%EC%88%A0%EB%8B%A5%EC%88%A0%EB%8B%A5/id6581483622", "_blank");
+    }
+  };
+  const handleGooglePlayClick = () => {
+    if (typeof window !== "undefined") {
+      window.open("https://play.google.com/store/apps/details?id=me.suldak.cheers", "_blank");
     }
   };
 
   return (
-    <div
-      className="relative h-[684px] bg-suldak-mint-500 w-full mobile:h-[390px]"
-      data-section="reservation"
-      ref={ref}
-    >
+    <div className="relative h-[684px] bg-suldak-mint-500 w-full mobile:h-[390px]">
       <div className="mobile:hidden tablet:hidden">
-        <Image
-          alt="사전예약"
-          layout="fill"
-          objectFit="cover"
-          src={ReservationImg}
-        />
+        <Image alt="사전예약" layout="fill" objectFit="cover" src={ReservationImg} />
       </div>
       <div className="absolute inset-0 z-10 flex w-full flex-col items-center justify-center text-white">
-        <div className="text-[80px] font-bold mobile:text-[36px]">
-          술닥술닥 사전예약
-        </div>
-        <div className="mb-[40px] text-center text-[30px] mobile:text-[16px]">
-          메일주소를 입력하시면 술닥술닥의 <br className="pc:hidden" />
-          오픈 소식을 알려드릴게요!
-        </div>
-        <div className="flex flex-col items-center space-y-4">
-          <div className="flex items-center text-[25px] mobile:flex-col mobile:justify-center mobile:space-y-[8px] mobile:text-[16px] tablet:flex-col tablet:space-y-[8px]">
-            <input
-              className="h-[68px] w-[330px] rounded-[10px] bg-white/50 px-4 text-black mobile:h-[48px] tablet:w-[600px] pc:w-[809px]"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-              type="email"
-              value={email}
-            />
-            <button
-              className="ml-[20px] h-[68px] w-[233px] rounded-[10px] bg-white text-[25px] font-bold text-suldak-mint-500 mobile:hidden tablet:hidden"
-              disabled={isLoading || !email.trim()}
-              onClick={handleSubscribe}
-            >
-              {isLoading ? "처리 중..." : "Subscribe"}
-            </button>
-            <button
-              className="h-[68px] w-[233px] rounded-[10px] bg-white text-[25px] font-bold text-suldak-mint-500 mobile:h-[48px] mobile:w-[330px] mobile:text-[16px] tablet:w-[600px] pc:hidden"
-              disabled={isLoading || !email.trim()}
-              onClick={handleSubscribe}
-            >
-              {isLoading ? "처리 중..." : "제출하기"}
-            </button>
-          </div>
-          <div className="h-[24px] text-center">
-            {enrollmentStatus === "success" && (
-              <div className="text-black">
-                사전예약이 완료되었습니다. 감사합니다.
-              </div>
-            )}
-            {enrollmentStatus === "error" && (
-              <div className="text-red-500">다시 시도해주세요.</div>
-            )}
-          </div>
+        <div className="text-[60px] font-bold mobile:text-[30px] mb-[20px]">지금 바로 술닥술닥을 만나보세요</div>
+        <div className="flex justify-center items-center gap-4">
+          <button
+            type="button"
+            className="flex items-center rounded-full bg-white px-[20px] py-[16px] font-bold text-suldak-mint-500 gap-[4px]"
+            onClick={handleAppStoreClick}
+          >
+            <Image src={AppStore} width={24} height={24} className="mb-1" />
+            <div className="text-center text-[22px] mobile:text-[16px] tracking-[0.02em] whitespace-nowrap">
+              App Store
+            </div>
+          </button>
+          <button
+            type="button"
+            className="flex items-center rounded-full bg-white px-[20px] py-[16px] font-bold text-suldak-mint-500 gap-[4px]"
+            onClick={handleGooglePlayClick}
+          >
+            <Image src={GooglePlay} width={24} height={24} />
+            <div className="text-center text-[22px] mobile:text-[16px] tracking-[0.02em] whitespace-nowrap">
+              Google Play
+            </div>
+          </button>
         </div>
       </div>
     </div>
   );
 }
 
-const ForwardedReservationSection = forwardRef(ReservationSection);
-
-ForwardedReservationSection.displayName = "ReservationSection";
-
-export default ForwardedReservationSection;
+export default ReservationSection;

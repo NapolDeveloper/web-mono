@@ -1,20 +1,28 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import dynamic from 'next/dynamic';
-import HeadRight from '@/assets/icons/ico-head-right.svg';
-import HeadImg from '@/assets/images/image-head.png';
-import AnimationData from '@/assets/images/animation-web-blog.json';
-import VectorImg from '@/assets/images/img-vector.png';
-
-interface Props {
-  scrollToReservation: () => void;
-}
+import Image from "next/image";
+import dynamic from "next/dynamic";
+import HeadRight from "@/assets/icons/ico-head-right.svg";
+import HeadImg from "@/assets/images/image-head.png";
+import AnimationData from "@/assets/images/animation-web-blog.json";
+import VectorImg from "@/assets/images/img-vector.png";
+import AppStore from "@/assets/images/ico-sns-apple-mint.png";
+import GooglePlay from "@/assets/images/ico-sns-playstore.png";
 
 // Lottie 컴포넌트를 동적으로 불러오기
-const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
-function Header({ scrollToReservation }: Props): JSX.Element {
+function Header(): JSX.Element {
+  const handleAppStoreClick = () => {
+    if (typeof window !== "undefined") {
+      window.open("https://apps.apple.com/kr/app/%EC%88%A0%EB%8B%A5%EC%88%A0%EB%8B%A5/id6581483622", "_blank");
+    }
+  };
+  const handleGooglePlayClick = () => {
+    if (typeof window !== "undefined") {
+      window.open("https://play.google.com/store/apps/details?id=me.suldak.cheers", "_blank");
+    }
+  };
   return (
     <>
       <div className="flex relative tablet:h-[800px] pc:h-[900px] mobile:h-[600px] w-full bg-suldak-mint-500">
@@ -22,45 +30,21 @@ function Header({ scrollToReservation }: Props): JSX.Element {
           {/* Desktop View Animation */}
           <div className="flex w-full tablet:hidden mobile:hidden justify-center items-center">
             <div className="absolute bottom-0 justify-center items-center">
-              <Image
-                src={VectorImg}
-                width={1100}
-                height={444}
-                alt="배경 벡터 이미지"
-                className="z-10"
-                priority
-              />
+              <Image src={VectorImg} width={1100} height={444} alt="배경 벡터 이미지" className="z-10" priority />
             </div>
             <div className="absolute z-20 bottom-4 justify-center items-center">
-              <Lottie
-                animationData={AnimationData}
-                loop
-                autoplay
-                style={{ width: '1000px', height: '474px' }}
-              />
+              <Lottie animationData={AnimationData} loop autoplay style={{ width: "1000px", height: "474px" }} />
             </div>
           </div>
 
           {/* Tablet View Image */}
           <div className="absolute justify-center items-center bottom-0 pc:hidden mobile:hidden">
-            <Image
-              src={HeadImg}
-              alt="태블릿용 헤더 이미지"
-              height={743}
-              width={600}
-              priority
-            />
+            <Image src={HeadImg} alt="태블릿용 헤더 이미지" height={743} width={600} priority />
           </div>
 
           {/* Mobile View Image */}
           <div className="absolute justify-center items-center bottom-0 pc:hidden tablet:hidden">
-            <Image
-              src={HeadImg}
-              alt="모바일용 헤더 이미지"
-              height={288}
-              width={355}
-              priority
-            />
+            <Image src={HeadImg} alt="모바일용 헤더 이미지" height={288} width={355} priority />
           </div>
         </div>
       </div>
@@ -77,14 +61,28 @@ function Header({ scrollToReservation }: Props): JSX.Element {
           <br />
           당신의 취향을 술닥술닥에서 만나보세요.
         </div>
-        <button
-          type="button"
-          className="mx-auto flex items-center rounded-full bg-white px-[20px] py-[16px] font-bold text-suldak-mint-500"
-          onClick={scrollToReservation}
-        >
-          지금 사전예약하기
-          <HeadRight className="ml-2" fill="#08BECA" />
-        </button>
+        <div className="flex justify-center items-center gap-[10px]">
+          <button
+            type="button"
+            className="flex items-center rounded-full bg-white px-[20px] py-[16px] font-bold text-suldak-mint-500 gap-[4px] mobile:px-[14px] mobile:py-[8px]"
+            onClick={handleAppStoreClick}
+          >
+            <Image src={AppStore} width={20} height={20} className="mb-1" />
+            <div className="text-center text-[16px]  tracking-[0.02em] whitespace-nowrap mobile:text-[12px]">
+              App Store
+            </div>
+          </button>
+          <button
+            type="button"
+            className="flex items-center rounded-full bg-white px-[20px] py-[16px] font-bold text-suldak-mint-500 gap-[4px] mobile:px-[14px] mobile:py-[8px]"
+            onClick={handleGooglePlayClick}
+          >
+            <Image src={GooglePlay} width={20} height={20} />
+            <div className="text-center text-[16px] tracking-[0.02em] whitespace-nowrap mobile:text-[12px]">
+              Google Play
+            </div>
+          </button>
+        </div>
       </section>
     </>
   );
