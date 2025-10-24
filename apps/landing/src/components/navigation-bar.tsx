@@ -37,7 +37,7 @@ function NavigationBar() {
               className="flex items-center rounded-[30px] bg-suldak-mint-500 px-[20px] py-[10px] text-white gap-[4px]"
               onClick={handleAppStoreClick}
             >
-              <Image src={AppStore} width={20} height={20} className="mb-1" />
+              <Image alt="App Store" src={AppStore} width={20} height={20} className="mb-1" />
               <div className="text-center font-bold text-[16px] tracking-[0.02em] whitespace-nowrap mobile:hidden">
                 App Store
               </div>
@@ -46,7 +46,7 @@ function NavigationBar() {
               className="flex items-center rounded-[30px] bg-suldak-mint-500 px-[20px] py-[10px] text-white gap-[4px]"
               onClick={handleGooglePlayClick}
             >
-              <Image src={GooglePlay} width={20} height={20} />
+              <Image alt="Google Play" src={GooglePlay} width={20} height={20} />
               <div className="text-center font-bold text-[16px] tracking-[0.02em] whitespace-nowrap mobile:hidden">
                 Google Play
               </div>

@@ -32,7 +32,7 @@ function ReservationSection() {
             className="flex items-center rounded-full bg-white px-[20px] py-[16px] font-bold text-suldak-mint-500 gap-[4px]"
             onClick={handleAppStoreClick}
           >
-            <Image src={AppStore} width={24} height={24} className="mb-1" />
+            <Image alt="App Store" src={AppStore} width={24} height={24} className="mb-1" />
             <div className="text-center text-[22px] mobile:text-[16px] tracking-[0.02em] whitespace-nowrap">
               App Store
             </div>
@@ -42,7 +42,7 @@ function ReservationSection() {
             className="flex items-center rounded-full bg-white px-[20px] py-[16px] font-bold text-suldak-mint-500 gap-[4px]"
             onClick={handleGooglePlayClick}
           >
-            <Image src={GooglePlay} width={24} height={24} />
+            <Image alt="Google Play" src={GooglePlay} width={24} height={24} />
             <div className="text-center text-[22px] mobile:text-[16px] tracking-[0.02em] whitespace-nowrap">
               Google Play
             </div>

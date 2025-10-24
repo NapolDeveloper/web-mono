@@ -67,7 +67,7 @@ function Header(): JSX.Element {
             className="flex items-center rounded-full bg-white px-[20px] py-[16px] font-bold text-suldak-mint-500 gap-[4px] mobile:px-[14px] mobile:py-[8px]"
             onClick={handleAppStoreClick}
           >
-            <Image src={AppStore} width={20} height={20} className="mb-1" />
+            <Image alt="App Store" src={AppStore} width={20} height={20} className="mb-1" />
             <div className="text-center text-[16px]  tracking-[0.02em] whitespace-nowrap mobile:text-[12px]">
               App Store
             </div>
@@ -77,7 +77,7 @@ function Header(): JSX.Element {
             className="flex items-center rounded-full bg-white px-[20px] py-[16px] font-bold text-suldak-mint-500 gap-[4px] mobile:px-[14px] mobile:py-[8px]"
             onClick={handleGooglePlayClick}
           >
-            <Image src={GooglePlay} width={20} height={20} />
+            <Image alt="Google Play" src={GooglePlay} width={20} height={20} />
             <div className="text-center text-[16px] tracking-[0.02em] whitespace-nowrap mobile:text-[12px]">
               Google Play
             </div>
